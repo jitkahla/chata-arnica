@@ -6,6 +6,12 @@
   --text: #1f2403;
 }
 
+[data-theme='dark'] {
+  --background-primary: #132221;
+  --background-secondary: #476462;
+  --text: #e1e1e1;
+}
+
 /* ZÁKLADNÍ STYLY */
 
 *,
@@ -185,6 +191,60 @@ span {
 
 /* SEM ZAČNĚTE PSÁT SVÉ STYLY PRO MOBIL */
 
+body {
+  font-family: 'Alegreya Sans', sans-serif;
+  color: var(--text);
+  background-color: var(--background-primary);
+}
+
+.page-header,
+.pitch,
+.pricelist,
+.footer {
+  background-color: var(--background-secondary);
+}
+
+.logo {
+  font-family: 'Dawning of a New Day', cursive;
+}
+
+.pitch {
+  font-family: 'Lora', serif;
+  text-align: center;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subheading {
+  text-align: center;
+}
+
+.intro-image {
+  background: top/cover url('images/arnica-intro.jpg') no-repeat;
+  height: 70vh;
+  margin: auto;
+}
+
+.offer {
+  width: 80%;
+  max-width: 270px;
+}
+
+.review,
+.footer {
+  font-style: oblique;
+}
+.review__text {
+  border: var(--background-secondary) solid 2px;
+}
+.navlink {
+  color: var(--text);
+}
+
 @media (min-width: 840px) {
   /* HLAVIČKA - NAVIGACE */
   .page-header {
@@ -221,4 +281,35 @@ span {
   }
 
   /* TADY PIŠTE STYLY PRO ŠÍŘKU NAD 800PX */
+  .pricelist__content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+  .offer {
+    width: 220px;
+  }
+  .review__text {
+    position: relative;
+    left: 60px;
+    background-color: var(--background-secondary);
+  }
+
+  .review__photo {
+    background: top/cover url('images/reviewer.jpg');
+    width: 300px;
+    height: 400px;
+  }
+  .footer {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .pricelist__content,
+  .footer {
+    gap: 6rem;
+  }
 }
